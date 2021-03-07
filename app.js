@@ -16,19 +16,18 @@ for (let j = 0; j < largo1; j++) {
         for (let k = 0; k < largo3; k++) {
             let nombre = pronoun[j] + adj[m] + noun[k]
             for (let p = 0; p < largo3; p++) {
-                //let largoext = extension[p].length;
-                //let res = nombre.substring(nombre.length - largoext, nombre.length);
+                //esta parte busca el final del nombre
+                let largoext = extension[p].length;
+                let res = nombre.substring(nombre.length - largoext, nombre.length);
 
-                //               if (res===extension[p]){
-                //                  nuevores=nombre.substring(0, nombre.length - largoext)+"."+extension[p];
-                //                    console.log(nuevores)
-                //                } else {
-                //                    console.log(nombre+"."+extension[p]);
-                //                }
-
-                //console.log(nombre.length - largoext)                
+                               if (res===extension[p]){
+                                  nuevores=nombre.substring(0, nombre.length - largoext)+"."+extension[p];
+                                    console.log(nuevores)
+                                } else {
+                                    console.log(nombre+"."+extension[p]);
+                                }               
                 
-                
+                //esta parte hace el replace si viene en cualquier parte del nombre
                 if (nombre.includes(extension[p]) === true) {
                     
                     let nuevonombre = nombre.replace(extension[p], "");
